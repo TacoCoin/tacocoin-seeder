@@ -136,7 +136,7 @@ extern "C" void* ThreadCrawler(void* data) {
     if (ips.empty()) {
       wait *= 1000;
       wait += rand() % (500 * *nThreads);
-      Sleep(wait);
+      Sleep(wait);s
       continue;
     }
     vector<CAddress> addr;
@@ -345,7 +345,7 @@ extern "C" void* ThreadStats(void*) {
 //TODO: We don't have any other seeds yet. Add them in next revision.
  static const string mainnet_seeds[] = {""};
  static const string testnet_seeds[] = {""};
-
+ static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
 //TODO: No .onion seed yet.
