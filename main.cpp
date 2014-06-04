@@ -136,7 +136,7 @@ extern "C" void* ThreadCrawler(void* data) {
     if (ips.empty()) {
       wait *= 1000;
       wait += rand() % (500 * *nThreads);
-      Sleep(wait);s
+      Sleep(wait);
       continue;
     }
     vector<CAddress> addr;
