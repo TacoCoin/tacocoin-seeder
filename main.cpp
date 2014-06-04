@@ -31,7 +31,7 @@ public:
   CDnsSeedOpts() : nThreads(96), nDnsThreads(4), nPort(53), mbox(NULL), ns(NULL), host(NULL), tor(NULL), fUseTestNet(false), fWipeBan(false), fWipeIgnore(false) {}
 
   void ParseCommandLine(int argc, char **argv) {
-    static const char *help = "Dogecoin-seeder\n"
+    static const char *help = "Tacocoin-seeder\n"
                               "Usage: %s -h <host> -n <ns> [-m <mbox>] [-t <threads>] [-p <port>]\n"
                               "\n"
                               "Options:\n"
@@ -343,15 +343,15 @@ extern "C" void* ThreadStats(void*) {
 }
 
 //TODO: We don't have any other seeds yet. Add them in next revision.
-static const string mainnet_seeds[] = {"seed.dogecoin.com", "seed.mophides.com", "seed.dglibrary.org", "seed.dogechain.info", ""};
-static const string testnet_seeds[] = {""};
-static const string *seeds = mainnet_seeds;
+ static const string mainnet_seeds[] = {""};
+ static const string testnet_seeds[] = {""};
+
 
 extern "C" void* ThreadSeeder(void*) {
 //TODO: No .onion seed yet.
-//  if (!fTestNet){
-//    db.Add(CService("kjy2eqzk4zwi5zd3.onion", 9333), true);
-//  }
+ //  if (!fTestNet){
+ //    db.Add(CService("kjy2eqzk4zwi5zd3.onion", 9333), true);
+ //  }
   do {
     for (int i=0; seeds[i] != ""; i++) {
       vector<CNetAddr> ips;
